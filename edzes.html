@@ -17,15 +17,40 @@
     
         
         <div class="beallitas">
-            <label for="percek">Percek:</label>
-            <input type="number" id="percek" min="0" value="0">
+            <label for="perc">Percek:</label>
+            <input type="number" id="perc" min="0" max="59" value="0">
         
-            <label for="masodpercek">Másodpercek:</label>
-            <input type="number" id="masodpercek" min="0" max="59" value="0">
+            <label for="masodperc">Másodpercek:</label>
+            <input type="number" id="masodperc" min="0" max="59" value="0">
         </div>
     
         <div class="kiiras">
             <p>Hátralévő idő: <span id="idoz">00:00</span></p>
+        </div>
+    </section>
+    <section id="edzesidoz">
+        <h2>Edzés Időzítő</h2>
+        
+
+        <div class="beallitas">
+            <label for="edzesperc">Percek:</label>
+            <input type="number" id="edzesperc" min="0" value="0">
+        
+            <label for="edzesmasodperc">Másodpercek:</label>
+            <input type="number" id="edzesmasodperc" min="0" max="59" value="0">
+        </div>
+    
+
+        <div class="gombok2">
+            <button>Edzés indítása</button>
+            <button>Szünet</button>
+            <button>Leállítás</button>
+        </div>
+    
+
+        <div class="kiiras2">
+            <p>Aktuális kör: <span id="kor">1</span></p>
+            <p>Idő: <span id="ido">00:00</span></p>
         </div>
     </section>
 
