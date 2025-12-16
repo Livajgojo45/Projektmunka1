@@ -1,78 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edzésidőzítő</title>
+    <title>Digitalis Edzoora</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="idozito">
-        <h2>Időzítő</h2>
-        <div class="gombok">
-            <button>Indítás</button>
-            <button>Leállítás</button>
-            <button>Visszaállítás</button>
-        </div>
-    
+    <div class="container">
+        <header>
+            <h1>Digitális edzőóra</h1>
+        </header>
+
+        <section id="visszaszamlalo">
+            <h2>Visszaszámláló időzítő</h2>
+            
+            <div>
+                <label for="percek">Percek:</label>
+                <input type="number" id="percek" min="0" max="59" value="1">
+                
+                <label for="masodpercek">Másodpercek:</label>
+                <input type="number" id="masodpercek" min="0" max="59" value="30">
+            </div>
+            
+            <div>
+                <div id="visszaszamlalokijelzo">01:30</div>
+            </div>
+            
+            <div>
+                <button id="inditas">Indítás</button>
+                <button id="szunet">Szünet</button>
+                <button id="alaphelyzet">Alaphelyzet</button>
+            </div>
+            
+            <div id="visszaszamlalostatusz">
+                Készen áll a visszaszámlálásra
+            </div>
+        </section>
         
-        <div class="beallitas">
-            <label for="perc">Percek:</label>
-            <input type="number" id="perc" min="0" max="59" value="0">
+        <section id="edzesidozito">
+            <h2>Edzés időzítő</h2>
+            
+            <div>
+                <p>Felkészüles...</p>
+                <p>Következő: <span id="kovetkezogyakorlat">10 másodperc pihenő</span></p>
+            </div>
+            
+            <div>
+                <div id="edzeskijelzo">00:30</div>
+            </div>
+            
+            <div>
+                Aktuális gyakorlat: <span id="aktualisgyakorlatnev">Felkészüles</span>
+            </div>
+            
+            <div>
+                <button id="edzesinditas">Edzés indítása</button>
+                <button id="edzesszunet">Szünet</button>
+                <button id="edzesleallitas">Leállítás</button>
+            </div>
+            
+            <div>
+                Válassz egy edzést és indítsd el!
+            </div>
+        </section>
         
-            <label for="masodperc">Másodpercek:</label>
-            <input type="number" id="masodperc" min="0" max="59" value="0">
-        </div>
-    
-        <div class="kiiras">
-            <p>Hátralévő idő: <span id="idoz">00:00</span></p>
-        </div>
-    </section>
-    <section id="edzesidoz">
-        <h2>Edzés Időzítő</h2>
-        
+        <section id="szinvaltoztato">
+            <h2>Színváltoztató háttér</h2>
 
-        <div class="beallitas">
-            <label for="edzesperc">Percek:</label>
-            <input type="number" id="edzesperc" min="0" value="0">
-        
-            <label for="edzesmasodperc">Másodpercek:</label>
-            <input type="number" id="edzesmasodperc" min="0" max="59" value="0">
-        </div>
-    
+            <div>
+                <label for="szinidokoz">Színváltás időköze:</label>
+                <input type="number" id="szinidokoz" min="1" max="10" value="1">
+                <span>másodperc</span>
+            </div>
 
-        <div class="gombok2">
-            <button>Edzés indítása</button>
-            <button>Szünet</button>
-            <button>Leállítás</button>
-        </div>
-    
+            <div style="margin-top:20px;">
+                <label>Válassz színeket:</label>
+                <input type="color" class="szinvalaszto" value="#CCFF00">
+                <input type="color" class="szinvalaszto" value="#FFFF00">
+                <input type="color" class="szinvalaszto" value="#DFFF00">
+            </div>
 
-        <div class="kiiras2">
-            <p>Aktuális kör: <span id="kor">1</span></p>
-            <p>Idő: <span id="ido">00:00</span></p>
-        </div>
-    </section>
-    <section id="szinvalto">
-        <h2>Színváltoztató</h2>
-    
-        <div class="beallitas">
-            <label for="szin">Válassz színt:</label>
-            <input type="color" id="szin" value="#ffffff">
-        </div>
-    
-        <div class="gombok3">
-            <button id="szinvalt">Színváltás indítása</button>
-            <button id="megall">Színváltás megállítása</button>
-        </div>
-    
-        <div class="kiiras3">
-            <p>Aktuális szín: <span id="jelenlegiszin">alapértelmezett</span></p>
-        </div>
-    </section>
+            <div style="margin-top:10px;">
+                <button id="szininditas">Indítás</button>
+                <button id="szinmegallitas">Megállítás</button>
+            </div>
+        </section>
 
-
-
+    </div>
 
 <script src="edzes.js"></script>
 </body>
