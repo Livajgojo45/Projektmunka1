@@ -15,22 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
         index = (index + 1) % szinek.length;
     }
 
-    // Ha a felhasználó változtatja a színeket
     szinvalasztoInputok.forEach((input, i) => {
         input.addEventListener('input', () => {
             szinek[i] = input.value;
         });
     });
 
-    // Indítás gomb
     szininditasGomb.addEventListener('click', () => {
         if (timer) clearInterval(timer);
 
-        // Azonnal vált egyet, hogy ne kelljen várni az első intervallumra
         valtogatSzin();
 
         timer = setInterval(() => {
-            // Biztosítsuk, hogy a szinidokoz szám legyen
             const idokoz = Number(szinidokozInput.value);
             if (!isNaN(idokoz) && idokoz > 0) {
                 valtogatSzin();
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, szinidokozInput.value * 1000);
     });
 
-    // Megállítás gomb
     szinmegallitasGomb.addEventListener('click', () => {
         if (timer) {
             clearInterval(timer);
