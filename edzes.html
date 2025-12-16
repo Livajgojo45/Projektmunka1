@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="edzes.js"></script>
+    <section id="idozito">
+        <h2>Időzítő</h2>
+        <div class="gombok">
+            <button>Indítás</button>
+            <button>Leállítás</button>
+            <button>Visszaállítás</button>
+        </div>
+    
+        
+        <div class="beallitas">
+            <label for="percek">Percek:</label>
+            <input type="number" id="percek" min="0" value="0">
+        
+            <label for="masodpercek">Másodpercek:</label>
+            <input type="number" id="masodpercek" min="0" max="59" value="0">
+        </div>
+    
+        <div class="kiiras">
+            <p>Hátralévő idő: <span id="idoz">00:00</span></p>
+        </div>
+    </section>
+
+
+<script src="edzes.js"></script>
 </body>
 </html>
